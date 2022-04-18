@@ -28,9 +28,9 @@ epi_genes_per_cell <- Matrix::colSums(epi.counts>0)
 hist(log10(epi_counts_per_cell+1))
 hist(log10(epi_genes_per_cell+1))
 plot(epi_counts_per_cell, epi_genes_per_cell, log='xy')
+plot(sort(epi_genes_per_cell), xlab='Cell', log='y', main='Genes per Cell (ordered)', ylab='Number of Genes')
 #low end outliers indicate failed libraries while high end outliers indicate doublets
 
-plot(sort(epi_genes_per_cell), xlab='Cell', log='y', main='Genes per Cell (ordered)', ylab='Number of Genes')
 imm_counts_per_cell <- Matrix::colSums(imm.counts)
 imm_counts_per_gene <- Matrix::rowSums(imm.counts)
 imm_genes_per_cell <- Matrix::colSums(imm.counts>0)
